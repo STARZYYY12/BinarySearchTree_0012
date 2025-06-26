@@ -68,4 +68,82 @@ class BinaryTree
             //6b exit
             return;
         }
-      
+        //step 7 : if the value in the data field of the new node is greater than that of the parent4
+        else if (x > parent->info)
+        {
+            //7a make the right child of parent point to the new node
+            parent->rightchild = newNode;
+
+            //7b exit
+            return;
+        }
+       }
+
+    void search(int element, Node *&parent, Node *currentNode)
+    {
+        // this fuction searcher the currentNode of the specifiedd node ad
+        currentNode = ROOT;
+        parent = nullptr;
+        while ((currentNode != nullptr) && (currentNode->info != element))
+        {
+            parent = currentNode;
+            if (element < currentNode->info)
+                currentNode = currentNode->leftchild;
+            else
+                currentNode = currentNode->rightchild;
+        }
+    }
+
+    void inorder(Node *ptr)
+    {
+        if (isEmpty())
+        {
+            cout << "Tree is empty" << endl;;
+            return;
+    }
+    if (ptr == nullptr)
+    return
+
+    inorder(ptr->leftchild);
+    cout << ptr->info << " "; //parent
+    inorder(ptr->rightchild);
+}
+void preorder(Node *ptr)
+{
+    if (isEmpty())
+    {
+        cout << "Tree is empty" << endl;
+        return;
+    }
+    if (ptr == nullptr)
+        return;
+
+        cout << ptr->info << " ";
+        preorder(ptr->leftchild);
+        preorder(ptr->rightchild);
+    }
+    
+    void postorder(Node *ptr)
+    {
+    if (isEmpty())
+    {
+        cout << "Tree is empty" << endl;
+        return;
+    }
+    if (ptr == nullptr)
+    return;
+    
+    postorder(ptr->leftchild);
+    postorder(ptr->rightchild);
+    cout << ptr->info << " ";
+    }
+
+    bool isEmpty()
+    {
+        //checks if thee is empty
+        return ROOT == nullptr;
+    }
+};
+
+int main()
+
