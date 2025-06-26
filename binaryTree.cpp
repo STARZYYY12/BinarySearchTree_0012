@@ -35,3 +35,8 @@ class BinaryTree
 
         // step 1 : allocate memory for the new node
         Node *newNode = new Node();
+
+        // step2 : assign value to the data field of new Node
+        newNode->info = x;
+
+        
