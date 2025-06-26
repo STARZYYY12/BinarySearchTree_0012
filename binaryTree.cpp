@@ -138,4 +138,9 @@ void preorder(Node *ptr)
     cout << ptr->info << " ";
     }
 
-   
+    bool isEmpty()
+    {
+        //checks if thee is empty
+        return ROOT == nullptr;
+    }
+};
